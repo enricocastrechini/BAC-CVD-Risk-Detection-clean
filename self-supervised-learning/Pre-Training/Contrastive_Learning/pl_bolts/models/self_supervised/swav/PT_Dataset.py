@@ -74,7 +74,7 @@ class TorchDataset(Dataset):
 # Nur zum Testen:
 
 if __name__ == '__main__':
-    dataset = TorchDataset("/home/wolfda/Clinic_Data/Challenge/Challenge_COVID-19-20_v2/Train_tensor_slices_filter", augmentations=True)
+    dataset = TorchDataset("./data", augmentations=True)
     img, mask = dataset[1]
     img, mask = dataset[2]
 

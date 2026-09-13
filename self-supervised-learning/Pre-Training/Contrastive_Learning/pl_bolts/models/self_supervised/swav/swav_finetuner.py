@@ -16,8 +16,8 @@ def cli_main():  # pragma: no cover
 
     parser = ArgumentParser()
     parser.add_argument("--dataset", type=str, help="stl10, imagenet", default="stl10")
-    parser.add_argument("--ckpt_path", type=str, help="path to ckpt", default = "/home/wolfda/Clinic_Data/Challenge/CT_PreTrain/LIDC/manifest-1600709154662/LIDC-PreTrain/save/model_A/versuch_0/epoch=2-step=60000.ckpt")
-    parser.add_argument("--data_dir", type=str, help="path to dataset", default="/home/wolfda/Clinic_Data/Challenge/Cifar") #default=os.getcwd()
+    parser.add_argument("--ckpt_path", type=str, help="path to ckpt", default="checkpoint.ckpt")
+    parser.add_argument("--data_dir", type=str, help="path to dataset", default=".") #default=os.getcwd()
 
     parser.add_argument("--batch_size", default=64, type=int, help="batch size per gpu")
     parser.add_argument("--num_workers", default=8, type=int, help="num of workers per GPU")

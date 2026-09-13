@@ -182,7 +182,7 @@ class BYOL(LightningModule):
         (args, _) = parser.parse_known_args()
 
         # Data
-        parser.add_argument("--data_dir", type=str, default="/home/wolfda/Data/PreTrain_Lung/Data/Hash_Vol_12_LIDC")
+        parser.add_argument("--data_dir", type=str, default=".")
         parser.add_argument("--num_workers", default=8, type=int)
 
         # optim
@@ -196,7 +196,7 @@ class BYOL(LightningModule):
 
 
         # wandb arguemnts
-        parser.add_argument("--savepath", default="/home/wolfda/Data/Spark/PreTrain/BYOL", type=str, help="Path to save checkpoints")
+        parser.add_argument("--savepath", default=".", type=str, help="Path to save checkpoints")
         parser.add_argument("--offline", action="store_true", help="Offline does not save metrics on wandb")
         parser.add_argument("--group", default="BYOL", type=str, help="Wandb group name")
         parser.add_argument("--job_type", default="Pre-training", type=str, help="Wandb job type")
