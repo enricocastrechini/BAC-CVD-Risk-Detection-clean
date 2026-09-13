@@ -119,7 +119,7 @@ the mean values summarized in the table above.*
 The thesis also reports the following ConvNeXt-Small holdout confusion
 matrix:
 
-![ConvNeXt-Small confusion matrix](docs\assets\thesis_convnext_confusion_matrix.jpg)
+![ConvNeXt-Small confusion matrix](docs\assets\thesis_convnext_confusion_matrix.png)
 
 *Source: thesis Figure 10. Counts depend on the private holdout split and
 should not be interpreted as a new public benchmark.*
