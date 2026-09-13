@@ -385,7 +385,7 @@ class Moco_v2(LightningModule):
         # parser.add_argument("--accumulate_grad_batches", type=int, default=1)
 
         # wandb arguemnts
-        parser.add_argument("--savepath", default="/home/wolfda/Data/Spark/PreTrain/BYOL", type=str, help="Path to save checkpoints")
+        parser.add_argument("--savepath", default=".", type=str, help="Path to save checkpoints")
         parser.add_argument("--offline", action="store_true", help="Offline does not save metrics on wandb")
         parser.add_argument("--wandb_group", default="MoCoV2", type=str, help="Wandb group name")
         parser.add_argument("--wandb_job_type", default="Pre-training", type=str, help="Wandb job type")

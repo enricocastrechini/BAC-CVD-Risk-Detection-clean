@@ -35,7 +35,7 @@ jobs:
       - name: Check for private machine paths
         run: |
           if grep -RInE '/home/(castrechini|wolfda)|/Users/|C:\\\\Users\\\\' \
-            --exclude-dir=.git --exclude='*.ipynb' .; then
+            --exclude-dir=.git --exclude='*.ipynb' --exclude='quality.yml' .; then
             echo "Private machine paths found in tracked project files."
             exit 1
           fi

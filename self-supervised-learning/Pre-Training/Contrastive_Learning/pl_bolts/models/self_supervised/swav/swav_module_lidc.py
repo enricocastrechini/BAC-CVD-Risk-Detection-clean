@@ -441,7 +441,7 @@ class SwAV(LightningModule):
 
         # Save Path
         parser.add_argument("--save_path",
-                            default="/home/wolfda/Data/Challenge_COVID-19-20_v2/PreTrain", type=str,
+                            default=".", type=str,
                             help="Path to save the Checkpoints")
         parser.add_argument("--model", default="Covid_SwAV_v1", type=str, help="Model: A, B, C, ...")
         parser.add_argument("--test", default="Covid_SwAV_v1", type=str, help="Test: 0, 1, 2 ...")
@@ -450,13 +450,13 @@ class SwAV(LightningModule):
         parser.add_argument("--load_pretrained_weights", action="store_true",
                             help="Should Resume from Pretrained Weights?")  # Statt Bool: action setzt das default value auf False und es wird True sobald man --load_pretrained_weights benutzt.
         parser.add_argument("--pretrained_weights",
-                            default="/home/wolfda/Data/SwAV_ImageNet_PreTrain/swav_800ep_pretrain.pth.tar",
+                            default="swav_800ep_pretrain.pth.tar",
                             type=str, help="path to pretrained weights")
 
         # Data Path:
-        # "/home/wolfda/Clinic_Data/Challenge/CT_PreTrain/LIDC/manifest-1600709154662/LIDC-2D-jpeg-images"
-        # "/home/wolfda/Clinic_Data/Challenge/Cifar"
-        parser.add_argument("--data_dir", default="/home/wolfda/Data/Challenge_COVID-19-20_v2/Data/2D/Pre-Down_Half_AllSeg/PreTrain",
+        # Example: "path/to/lidc-2d-jpeg-images"
+        # Example: "path/to/cifar"
+        parser.add_argument("--data_dir", default=".",
                             type=str, help="path to download data")
 
         # model params
