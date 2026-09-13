@@ -61,51 +61,25 @@ designed to exploit additional unlabeled mammography data.
 
 ------------------------------------------------------------------------
 
-## Key results
+## Key Results
 
 The strongest supervised model was **ConvNeXt-Small**.
 
-  ------------------------------------------------------------------------
-  Experiment                                 AUC-ROC Notes
-  --------------------- ---------------------------- ---------------------
-  ConvNeXt-Small ---                        **0.88** Best supervised model
-  3-fold CV                                          
+| Experiment | AUC-ROC | Notes |
+|---|---:|---|
+| **ConvNeXt-Small — 3-fold CV** | **0.88** | Best supervised model |
+| **ConvNeXt-Small — grouped aggregation** | **0.91** | Mean probability across images from the same patient/exam |
+| Pseudolabeling — 10% | 0.87 | Best pseudolabeling configuration |
+| Pseudolabeling — 20% | 0.86 | — |
+| Pseudolabeling — 30% | 0.86 | — |
+| Pseudolabeling — 40% | 0.84 | — |
+| Pseudolabeling — 50% | 0.84 | — |
+| Pseudolabeling — 100% | 0.83 | Performance decreased with more noisy labels |
+| Knowledge Distillation | 0.61 | Below baseline |
+| KD + CRD | 0.54 | Below baseline |
+| SparK / MAE | 0.50 | Good reconstruction, weak downstream transfer |
 
-  ConvNeXt-Small ---                        **0.91** Mean probability
-  grouped                                             across images from
-  aggregation                                        the same patient/exam
-
-  Pseudolabeling ---                            0.87 Best pseudolabeling
-  10%                                                configuration
-
-  Pseudolabeling ---                            0.86 ---
-  20%                                                
-
-  Pseudolabeling ---                            0.86 ---
-  30%                                                
-
-  Pseudolabeling ---                            0.84 ---
-  40%                                                
-
-  Pseudolabeling ---                            0.84 ---
-  50%                                                
-
-  Pseudolabeling ---                            0.83 Performance decreased
-  100%                                               with more noisy
-                                                     labels
-
-  Knowledge                                     0.61 Below baseline
-  Distillation                                       
-
-  KD + CRD                                      0.54 Below baseline
-
-  SparK / MAE                                   0.50 Good reconstruction,
-                                                     weak downstream
-                                                     transfer
-  ------------------------------------------------------------------------
-
-The corresponding grouped AUC-PR for ConvNeXt-Small was
-**0.90**.
+For **ConvNeXt-Small**, grouped aggregation also achieved an **AUC-PR of 0.90**.
 
 ### Result provenance
 
@@ -145,7 +119,7 @@ the mean values summarized in the table above.*
 The thesis also reports the following ConvNeXt-Small holdout confusion
 matrix:
 
-![ConvNeXt-Small confusion matrix](docs/assets/thesis_convnext_confusion_matrix.png)
+![ConvNeXt-Small confusion matrix](docs\assets\thesis_convnext_confusion_matrix.jpg)
 
 *Source: thesis Figure 10. Counts depend on the private holdout split and
 should not be interpreted as a new public benchmark.*
